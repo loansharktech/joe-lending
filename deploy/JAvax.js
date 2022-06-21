@@ -46,30 +46,30 @@ module.exports = async function ({
   await deployment.receipt;
   const jAvaxDelegator = await ethers.getContract("JAvaxDelegator");
 
-  console.log("Supporting jAVAX market...");
-  await joetroller._supportMarket(jAvaxDelegator.address, 2, {
-    gasLimit: 2000000,
-  });
+  // console.log("Supporting jAVAX market...");
+  // await joetroller._supportMarket(jAvaxDelegator.address, 2, {
+  //   gasLimit: 2000000,
+  // });
 
-  const priceOracle = await ethers.getContract("PriceOracleProxyUSD");
-  console.log("Setting price feed source for jAVAX");
-  await priceOracle._setAggregators(
-    [jAvaxDelegator.address],
-    [AVAX_PRICE_FEED.get(chainId)]
-  );
+  // const priceOracle = await ethers.getContract("PriceOracleProxyUSD");
+  // console.log("Setting price feed source for jAVAX");
+  // await priceOracle._setAggregators(
+  //   [jAvaxDelegator.address],
+  //   [AVAX_PRICE_FEED.get(chainId)]
+  // );
 
-  const collateralFactor = "0.75";
-  console.log("Setting collateral factor ", collateralFactor);
-  await joetroller._setCollateralFactor(
-    jAvaxDelegator.address,
-    ethers.utils.parseEther(collateralFactor)
-  );
+  // const collateralFactor = "0.75";
+  // console.log("Setting collateral factor ", collateralFactor);
+  // await joetroller._setCollateralFactor(
+  //   jAvaxDelegator.address,
+  //   ethers.utils.parseEther(collateralFactor)
+  // );
 
-  const reserveFactor = "0.20";
-  console.log("Setting reserve factor ", reserveFactor);
-  await jAvaxDelegator._setReserveFactor(
-    ethers.utils.parseEther(reserveFactor)
-  );
+  // const reserveFactor = "0.20";
+  // console.log("Setting reserve factor ", reserveFactor);
+  // await jAvaxDelegator._setReserveFactor(
+  //   ethers.utils.parseEther(reserveFactor)
+  // );
 };
 
 module.exports.tags = ["jAVAX"];

@@ -25,7 +25,8 @@
     "test:prepare": "NO_RUN=true ./script/test",
     "checksize": "npx run ./script/saddle/contractSizer.js",
     "rinkeby:deploy": "hardhat --network rinkeby deploy",
-    "avalanche:deploy": "hardhat --network avalanche deploy"
+    "avalanche:deploy": "hardhat --network avalanche deploy",
+    "fuji:deploy": "hardhat --network fuji deploy"
   },
   "repository": "git@github.com:traderjoe-xyz/joe-lending.git",
   "author": "Trader Joe",

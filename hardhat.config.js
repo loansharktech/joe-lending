@@ -214,7 +214,7 @@ module.exports = {
       live: true,
       saveDeployments: true,
       tags: ["staging"],
-      gasMultiplier: 2,
+      gas: 2100000, gasPrice: 25000000000
     },
     harmony: {
       url: "https://api.s0.t.hmny.io",
